@@ -12,7 +12,6 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final itemProvider = Provider.of<DashboardProvider>(context);
-    // Load items when the screen is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       itemProvider.loadAppList();
     });
@@ -25,8 +24,7 @@ class AppView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CommonTextWidget(
-                  text: appState.toUpperCase(),
-                  fontWeight: FontWeight.bold),
+                  text: appState.toUpperCase(), fontWeight: FontWeight.bold),
               const Icon(
                 Icons.more_vert,
                 color: Colors.grey,
@@ -93,7 +91,7 @@ class AppView extends StatelessWidget {
             },
             separatorBuilder: (BuildContext context, int index) {
               return const Divider(
-                thickness:zero3,
+                thickness: zero3,
               );
             },
           ),
@@ -107,7 +105,7 @@ class AppView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CommonTextWidget(text:viewReport, color: Colors.blue),
+              CommonTextWidget(text: viewReport, color: Colors.blue),
               Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.blue,

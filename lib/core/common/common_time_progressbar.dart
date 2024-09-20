@@ -18,11 +18,11 @@ class CommonTimeProgressbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 16,
-      // margin: EdgeInsets.symmetric(vertical: 4, horizontal: 16),
+      height: sixteen,
+
       decoration: BoxDecoration(
         color: isActive ? Colors.brown : Colors.brown.withOpacity(zero20),
-        borderRadius: BorderRadius.circular(0),
+        borderRadius: BorderRadius.circular(zero),
       ),
 
 

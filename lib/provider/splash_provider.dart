@@ -5,9 +5,6 @@ class SplashProvider with ChangeNotifier {
 
   bool get isSplashDone => _isSplashDone;
 
-  int _number = 0;
-
-  int get number => _number;
 
   //=============================================================DropDown==========================================
   String? _selectedItem;

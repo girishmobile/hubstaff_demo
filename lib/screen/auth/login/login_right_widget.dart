@@ -16,7 +16,6 @@ class LoginRightWidget extends StatelessWidget {
       required this.isMobile,
       required this.size,
       required this.provider});
-
   final Size size;
   final bool isMobile;
   final LoginProvider provider;
@@ -32,6 +31,9 @@ class LoginRightWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
+
+          isMobile?SizedBox(height: size.height*zero06,):const SizedBox.shrink(),
           Align(
               alignment: isMobile ? Alignment.center : Alignment.topRight,
               child: Image.asset(

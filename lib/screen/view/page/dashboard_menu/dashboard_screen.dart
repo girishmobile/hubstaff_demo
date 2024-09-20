@@ -20,9 +20,6 @@ class DashboardScreen extends StatelessWidget {
     var size=MediaQuery.sizeOf(context);
     var isMobile=Responsive.isMobile(context);
     return  Scaffold(
-     /* appBar: AppBar(
-        backgroundColor: colorMenu,
-      ),*/
       body: SizedBox(
         width: size.width,
         height: size.height,

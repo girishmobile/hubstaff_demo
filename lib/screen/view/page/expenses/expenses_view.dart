@@ -26,6 +26,7 @@ class ExpensesView extends StatelessWidget {
     var isMobile = Responsive.isMobile(context);
     return SafeArea(
       child: Container(
+        margin: const EdgeInsets.only(left: ten,right: ten),
         width: size.width,
         height: size.height,
         color: colorBody,
@@ -35,12 +36,13 @@ class ExpensesView extends StatelessWidget {
             SizedBox(
               height: size.height *zero02,
             ),
-            CommonTextWidget(text: title ?? expenses, fontSize: twentyFive),
+            CommonTextWidget(text: title ?? expenses, fontSize: isMobile?eighteen:twentyFive,color: Colors.black,),
             SizedBox(
               height: size.height * zero02,
             ),
             CommonTextWidget(
                 text: desc ??expensesDesc,
+                fontSize: isMobile?twelve:fourteen,
                 textAlign: TextAlign.center),
             SizedBox(
               height: size.height * zero02,
@@ -48,8 +50,9 @@ class ExpensesView extends StatelessWidget {
             Flexible(
                 child: Image.asset(
               imagePath ?? icExpenses,
-              width: isMobile ? fourHundred : size.width * zero3,
-              height: isMobile ? size.height * zero3 : size.height * zero3,
+
+              width: isMobile ? size.width : size.width * zero3,
+              height: isMobile ? size.height *zero4 : size.height * zero3,
               fit: BoxFit.fitWidth,
             )),
             isButtonShow == false

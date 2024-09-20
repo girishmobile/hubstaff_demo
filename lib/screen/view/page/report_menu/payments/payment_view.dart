@@ -16,28 +16,37 @@ class PaymentView extends StatelessWidget {
     var isMobile = Responsive.isMobile(context);
     return Container(
       color: colorBody,
-      padding: const EdgeInsets.all(twenty),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      width: size.width,
+      height: size.height,
+      child: ListView(
         children: [
-          CommonReportTopView(isMobile: isMobile,size: size,),
+          Container(
 
-          const SizedBox(
-            height: twenty,
-          ),
+            padding: const EdgeInsets.all(twenty),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CommonReportTopView(isMobile: isMobile,size: size,),
 
-          SizedBox(height: size.height*zero1,),
-          Center(child: Column(
-            children: [
-              Image.asset(icNoReport,width: size.height*zero2,),
-              CommonTextWidget(text: notingReport,top: size.height*zero02,fontSize: eighteen,),
-              const CommonTextWidget(text: notingReportDesc,fontSize: eighteen),
-            ],
-          )),
+                const SizedBox(
+                  height: twenty,
+                ),
 
-          const SizedBox(
-            height: fifteen,
+                SizedBox(height: size.height*zero1,),
+                Center(child: Column(
+                  children: [
+                    Image.asset(icNoReport,width: size.height*zero2,),
+                    CommonTextWidget(text: notingReport,top: size.height*zero02,fontSize: isMobile?sixteen:eighteen,),
+                     CommonTextWidget(text: notingReportDesc,fontSize: isMobile?fourteen:eighteen),
+                  ],
+                )),
+
+                const SizedBox(
+                  height: fifteen,
+                ),
+              ],
+            ),
           ),
         ],
       ),

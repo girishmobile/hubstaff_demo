@@ -1,5 +1,6 @@
 import 'package:demo/core/Responsive.dart';
 import 'package:demo/core/color.dart';
+import 'package:demo/core/constants/num_constants.dart';
 import 'package:demo/screen/auth/signup/sign_up_left_view.dart';
 import 'package:demo/screen/auth/signup/sign_up_right_view.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +41,7 @@ class SignupView extends StatelessWidget {
                           alignment: Alignment.bottomRight,
                           child: Container(
                             width: MediaQuery.of(context).size.width *
-                                0.20, // Half the screen width
+                                zero20, // Half the screen width
                             height: MediaQuery.of(context).size.height / 2,
                             decoration: const BoxDecoration(
                               color: Colors.black,
@@ -55,7 +56,7 @@ class SignupView extends StatelessWidget {
                           alignment: Alignment.topLeft,
                           child: Container(
                             width: MediaQuery.of(context).size.width *
-                                0.1, // Half the screen width
+                                zero1, // Half the screen width
                             height: MediaQuery.of(context).size.height / 5,
                             decoration: BoxDecoration(
                               color: Colors.yellow[200],

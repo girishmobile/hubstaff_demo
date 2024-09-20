@@ -122,6 +122,7 @@
  const double ninetyEight = 98.0;
  const double ninetyNine = 99.0;
  const double oneHundred = 100.0;
+ const double oneHundredFifty = 150.0;
  const double oneHundredTwenty = 120.0;
  const double twoHundred = 200.0;
  const double fourHundred = 400.0;

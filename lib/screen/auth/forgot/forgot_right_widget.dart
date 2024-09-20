@@ -26,16 +26,19 @@ class ForgotRightWidget extends StatelessWidget {
       color: Colors.white,
       width: size.width,
       height: size.height,
-      margin: const EdgeInsets.all(twenty),
+      margin: const EdgeInsets.only(top: thirty),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          isMobile
+              ? commonBackButton(context: context)
+              : const SizedBox.shrink(),
           Align(
               alignment: isMobile ? Alignment.center : Alignment.topRight,
               child: Image.asset(
                 icLogo,
-                width: isMobile ? oneHundred : twoHundred,
+                width: isMobile ? oneHundredFifty : twoHundred,
                 height: isMobile ? fifty : oneHundred,
               )),
           Expanded(
@@ -53,7 +56,6 @@ class ForgotRightWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
                         Align(
                           alignment:
                               isMobile ? Alignment.center : Alignment.topLeft,
@@ -64,19 +66,14 @@ class ForgotRightWidget extends StatelessWidget {
                                   fontWeight: FontWeight.w800,
                                   color: Colors.black)),
                         ),
-
                         CommonTextWidget(
-                          top: thirty,
+                            top: thirty,
                             text: '$workEmail $star',
                             style: GoogleFonts.roboto(
                                 fontSize: fourteen,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.grey)),
-
-                        const CommonTextFieldWidget(
-                            top: ten,
-                            hint: workEmail),
-
+                        const CommonTextFieldWidget(top: ten, hint: workEmail),
                         SizedBox(
                           width: isMobile
                               ? size.width * zero8

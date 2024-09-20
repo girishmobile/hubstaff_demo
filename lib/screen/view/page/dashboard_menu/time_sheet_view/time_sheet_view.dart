@@ -43,16 +43,11 @@ class TimeSheetView extends StatelessWidget {
               child: PaginatedDataTable(
               columnSpacing: oneHundredTwenty,
                 dataRowMaxHeight: seventy,
-              rowsPerPage: itemProvider.itemProjectList.length>0?5:itemProvider.itemTimeSheet.length,
-                availableRowsPerPage: [5, 10, 20],
-   // rowsPerPage = itemProvider.itemTimeSheet.length > 5 ? 5 : itemProvider.itemTimeSheet.length;
-                //  rowsPerPage: itemProvider.itemTimeSheet!=null?  itemProvider.itemTimeSheet.length:0,
+                rowsPerPage: itemProvider.itemTimeSheet.length,
                 onPageChanged: (pageIndex) {
                   itemProvider.selectedPage=pageIndex;
                 },
-                onRowsPerPageChanged: (value){
-                itemProvider.selectedRowPage=value??5;
-                },
+
                 columns:  [
                     DataColumn(label: CommonTextWidget(text: project,style: commonTextStyle(fontSize: twelve,color: Colors.black),)),
                   DataColumn(label: CommonTextWidget(text: date,style: commonTextStyle(fontSize: twelve,color: Colors.black),)),

@@ -18,7 +18,6 @@ class AmountOwedView extends StatelessWidget {
     var isMobile = Responsive.isMobile(context);
     final itemProvider = Provider.of<DashboardProvider>(context);
 
-    // Load items when the screen is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       itemProvider.loadAmountOwed();
     });

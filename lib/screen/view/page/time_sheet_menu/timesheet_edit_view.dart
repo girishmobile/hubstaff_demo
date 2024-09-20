@@ -43,17 +43,19 @@ class TimesheetEditView extends StatelessWidget {
               child: isMobile?Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const CommonTextWidget(
+                   CommonTextWidget(
                       text: viewEditTimeSheet,
-                      fontSize: twentyFive,
+                      bottom: isMobile?ten:0,
+                      fontSize:isMobile?twenty: twentyFive,
                       fontWeight: FontWeight.w400),
+
                   Expanded(
                     child: Container(
                       width: size.width,
                       alignment: Alignment.center,
                       child: Container(
                         width: isMobile?size.width*0.9:size.width * zero2,
-                        height: fifty,
+                        height: isMobile?forty:fifty,
                         decoration: BoxDecoration(
                             color: Colors.grey.withOpacity(zero20),
                             borderRadius: BorderRadius.circular(twentyFive)),
@@ -130,16 +132,18 @@ class TimesheetEditView extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: twenty,
+             SizedBox(
+              height: isMobile?twentyFive:twenty,
             ),
             isMobile?Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(ten),
+
+                      padding:  const EdgeInsets.all(ten),
                       decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(ten)),
@@ -215,11 +219,18 @@ class TimesheetEditView extends StatelessWidget {
                     const SizedBox(
                       width: twenty,
                     ),
-                    const CommonButtonWidget(
-                        text: filter,
-                        color: Colors.blueAccent,
-                        colorText: Colors.white)
+
                   ],
+
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: CommonButtonWidget(
+                      text: filter,
+                      top: twenty,
+                      width:size.width*zero7 ,
+                      color: Colors.blueAccent,
+                      colorText: Colors.white),
                 )
               ],
             ):Row(

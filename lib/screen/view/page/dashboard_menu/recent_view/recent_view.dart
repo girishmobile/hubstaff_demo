@@ -1,8 +1,8 @@
-import 'package:demo/core/responsive.dart';
 import 'package:demo/core/common/common_button_widget.dart';
 import 'package:demo/core/common/common_text_widget.dart';
 import 'package:demo/core/component.dart';
 import 'package:demo/core/constants/num_constants.dart';
+import 'package:demo/core/responsive.dart';
 import 'package:demo/core/string_utils/string_utils.dart';
 import 'package:demo/provider/dashboard_provider.dart';
 import 'package:flutter/material.dart';
@@ -22,23 +22,23 @@ class RecentView extends StatelessWidget {
     });
 
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(fifteen),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           commonTitleView(text: "Recent Activity"),
           const SizedBox(
-            height: 20,
+            height: twenty,
           ),
           GridView.builder(
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisExtent: 200,
+              mainAxisExtent: twoHundred,
               crossAxisCount: isMobile ? 1 : 3, // number of items in each row
-              mainAxisSpacing: 20.0, // spacing between rows
-              crossAxisSpacing: 20.0, // spacing between columns
+              mainAxisSpacing: twenty, // spacing between rows
+              crossAxisSpacing: twenty, // spacing between columns
             ),
-            padding: const EdgeInsets.all(0.0),
+            padding: const EdgeInsets.all(zero),
             // padding around the grid
             itemCount: itemProvider.itemRecent.length,
             // total number of items
@@ -58,11 +58,11 @@ class RecentView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CommonTextWidget(text: "View Activity", color: Colors.blue),
+              CommonTextWidget(text: viewActivity, color: Colors.blue),
               Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.blue,
-                size: 10,
+                size: ten,
               )
             ],
           )

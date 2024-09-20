@@ -12,7 +12,6 @@ class ProjectView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final itemProvider = Provider.of<DashboardProvider>(context);
-    // Load items when the screen is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       itemProvider.loadProjectList();
     });

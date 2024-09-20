@@ -38,6 +38,7 @@ class  DailyTotalView extends StatelessWidget {
                   const CommonTextWidget(
                     text: "Total hours worked per day",
                   ),
+                  isMobile?const SizedBox(height: ten,):const SizedBox.shrink(),
                   CommonReportTopView(
                     leftText: hours,
                     title: "Daily totals report (Weekly)",
@@ -62,7 +63,7 @@ class  DailyTotalView extends StatelessWidget {
                                   Expanded(
                                     child: Container(
                                       alignment: Alignment.centerLeft,
-                                      padding: const EdgeInsets.all(fifteen),
+                                      padding:  EdgeInsets.all(isMobile?ten:fifteen),
                                       child: Row(
                                         children: [
                                           Column(
@@ -115,7 +116,7 @@ class  DailyTotalView extends StatelessWidget {
                                 ],
                               ),
                             ),
-                              Divider(thickness: 0.3,),
+                              const Divider(thickness: zero3,),
                             IntrinsicHeight(
                               child: Row(children: [
                                 Expanded(
@@ -174,36 +175,35 @@ class  DailyTotalView extends StatelessWidget {
                                     )),
                               ],),
                             ),
-                              Divider(thickness: 0.3,),
+                              const Divider(thickness: zero3,),
                               Align(
                                 alignment: Alignment.topLeft,
-                                child: Expanded(
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          alignment: Alignment.center,
-                                          padding: const EdgeInsets.all(fifteen),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            mainAxisAlignment: MainAxisAlignment.start,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              CommonTextWidget(
-                                                text: "Earned".toUpperCase(),
-                                                fontSize: twelve,
-                                              ),
-                                              CommonTextWidget(
-                                                top: five,
-                                                text: "---------".toUpperCase(),
-                                              )
-                                            ],
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      alignment: Alignment.center,
+                                      padding: const EdgeInsets.all(fifteen),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          CommonTextWidget(
+                                            text: "Earned".toUpperCase(),
+                                            fontSize: twelve,
                                           ),
-                                        ),
-                                      ],
-                                    )),
+                                          CommonTextWidget(
+                                            top: five,
+                                            text: "---------".toUpperCase(),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               )
                             ],
                           ),
@@ -437,7 +437,7 @@ class LineChartSample1 extends StatelessWidget {
             getTitlesWidget: (double value, TitleMeta meta) {
               switch (value.toInt()) {
                 case 0:
-                  return Expanded(child: const Text('Mon, Sep 16'));
+                  return const Text('Mon, Sep 16');
                 case 1:
                   return const Text('Tue, Sep 17');
                 case 2:
@@ -520,7 +520,7 @@ class ReportView1 extends StatelessWidget {
           // Header Row
           Row(
             children: [
-              Expanded(child: commonHeadingView(title: "Project",color: Colors.black,fontWeight: FontWeight.w600),),
+              commonHeadingView(title: "Project",color: Colors.black,fontWeight: FontWeight.w600),
               commonHeadingView(title: "Mon, Sep 16, 2024	",color: Colors.black,fontWeight: FontWeight.w600),
               commonHeadingView(title: "Tue, Sep 17, 2024",color: Colors.black,fontWeight: FontWeight.w600),
               commonHeadingView(title: "Wed, Sep 18, 2024",color: Colors.black,fontWeight: FontWeight.w600),

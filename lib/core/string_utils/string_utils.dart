@@ -121,6 +121,7 @@ const String send="Send";
 
 
 const String hours="Hours";
+const String viewActivity="View Activity";
 const String currentRate="Current rate";
 const String totalHours="Total hours";
 const String total="Total";

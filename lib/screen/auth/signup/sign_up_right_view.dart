@@ -27,7 +27,6 @@ class SignUpRightView extends StatelessWidget {
             clipBehavior: Clip.none,
             alignment: Alignment.center,
             children: [
-
               Container(
                 width: size.width * zero22,
                 height: size.height * zero4,

@@ -27,6 +27,7 @@ class CommonReportTopView extends StatelessWidget {
          CommonTextWidget(
           text: title??paymentReport,
           fontSize: twenty,
+      bottom: isMobile?ten:zero,
           fontWeight: FontWeight.w400,
           color: Colors.black,
         ),
@@ -40,6 +41,7 @@ class CommonReportTopView extends StatelessWidget {
                 color: Colors.blue,
               ),
               CommonTextWidget(
+                left: five,
                 text: scheduledReports,
                 color: Colors.blue,
               )
@@ -60,14 +62,14 @@ class CommonReportTopView extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         commonArrowView(
-                          width: fifty,
+                          width: isMobile?forty:fifty,
                           height: forty,
                         ),
                         const SizedBox(
                           width: ten,
                         ),
                         commonArrowView(
-                            width: fifty,
+                            width: isMobile?forty:fifty,
                             height: forty,
                             icon: Icons.arrow_forward),
                         const SizedBox(
@@ -76,17 +78,20 @@ class CommonReportTopView extends StatelessWidget {
                         Expanded(
                           child: commonArrowView(
                               height: forty,
-                              child: const Padding(
-                                padding: EdgeInsets.all(four),
+                              child:  Padding(
+                                padding: const EdgeInsets.all(four),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CommonTextWidget(
-                                      right: ten,
-                                      text:
-                                          "Tue, Aug 20, 2024 - Fri, Sep 20, 2024",
+                                    Flexible(
+                                      child: CommonTextWidget(
+                                        right: ten,
+                                        fontSize: isMobile?eleven:fourteen,
+                                        text:
+                                            "Tue, Aug 20, 2024 - Fri, Sep 20, 2024",
+                                      ),
                                     ),
-                                    Icon(
+                                    const Icon(
                                       Icons.calendar_month,
                                       color: coloBlue,
                                     )

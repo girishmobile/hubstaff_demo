@@ -6,14 +6,11 @@ import 'package:demo/core/image_path.dart';
 import 'package:demo/core/string_utils/string_utils.dart';
 import 'package:demo/provider/dashboard_provider.dart';
 import 'package:demo/screen/view/page/dashboard_menu/dashboard_screen.dart';
-
 import 'package:demo/screen/view/page/expenses/expenses_view.dart';
-
 import 'package:demo/screen/view/page/report_menu/all_reports/all_report_view.dart';
 import 'package:demo/screen/view/page/report_menu/amount_owed/amount_owed_view.dart';
 import 'package:demo/screen/view/page/report_menu/daily_totals/daily_total_view.dart';
 import 'package:demo/screen/view/page/report_menu/payments/payment_view.dart';
-
 import 'package:demo/screen/view/page/time_sheet_menu/timesheet_edit_view.dart';
 import 'package:demo/screen/view/side_menu/side_menu.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +30,8 @@ class MainScreen extends StatelessWidget {
           backgroundColor: colorMenu,
 
         ),
+
+
         drawer: isMobile
             ? Drawer(
                 backgroundColor: colorMenu,

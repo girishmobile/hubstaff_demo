@@ -19,6 +19,22 @@ commonInkWell({Widget? child,VoidCallback? onTap}){
   );
 
 }
+
+commonBackButton({required BuildContext  context}){
+  return Align(
+      alignment: Alignment.topLeft,
+      child: Container(
+        width: thirtyFive,
+        margin: const EdgeInsets.only(left: ten,top: twenty),
+        height: thirtyFive,
+        decoration: const BoxDecoration(
+            color: colorDarkBlue,
+            shape: BoxShape.circle
+        ),
+        child: Center(child: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: const Icon(Icons.arrow_back,color: Colors.white,size: twenty,))),));
+}
 TextStyle commonTextStyle(
     {double? fontSize, FontWeight? fontWeight, Color? color}){
   return  GoogleFonts.roboto(
@@ -81,18 +97,21 @@ commonProgressbarLine({double ?value,double? height,Color? color,Color? bg}){
 commonTimeView(){
   return ClipRRect(
     borderRadius: BorderRadius.circular(eight),
-    child: Container(
-      color: Colors.brown.withOpacity(zero20),
-      child: const Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CommonTimeProgressbar(startTime: '6 AM', endTime: '9 AM', isActive: true,width: 20,),
-          CommonTimeProgressbar(startTime: '9 AM', endTime: '12 PM', isActive: true,width: 100,),
-          CommonTimeProgressbar(startTime: '12 PM', endTime: '6 PM', isActive: false,width: 200,),
-          CommonTimeProgressbar(startTime: '6 AM', endTime: '9 AM', isActive: true,width: 80,),
-          CommonTimeProgressbar(startTime: '9 AM', endTime: '12 PM', isActive: true,width: 90,),
-
-        ],
+    child: FittedBox(
+      child: Container(
+        height: 4,
+        color: Colors.brown.withOpacity(zero20),
+        child: const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CommonTimeProgressbar(startTime: '6 AM', endTime: '9 AM', isActive: true,width: 20,),
+            CommonTimeProgressbar(startTime: '9 AM', endTime: '12 PM', isActive: true,width: 100,),
+            CommonTimeProgressbar(startTime: '12 PM', endTime: '6 PM', isActive: false,width: 200,),
+            CommonTimeProgressbar(startTime: '6 AM', endTime: '9 AM', isActive: true,width: 80,),
+            CommonTimeProgressbar(startTime: '9 AM', endTime: '12 PM', isActive: true,width: 90,),
+      
+          ],
+        ),
       ),
     ),
   );

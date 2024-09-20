@@ -17,10 +17,7 @@ class AllReportView extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.sizeOf(context);
     var isMobile = Responsive.isMobile(context);
-    var isTablet = Responsive.isTablet(context);
     final itemProvider = Provider.of<DashboardProvider>(context);
-
-    // Load items when the screen is built
     WidgetsBinding.instance.addPostFrameCallback((_) {
       itemProvider.loadGeneral();
       itemProvider.loadPayment();
@@ -44,6 +41,34 @@ class AllReportView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
+              isMobile?Column(
+                children: [
+                  const Align(
+                      alignment: Alignment.center,
+                      child: CommonTextWidget(text: report, left: ten,color: Colors.black,fontSize: twenty,)),
+
+                  const SizedBox(height: ten,),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                    const Row(
+                      children: [
+                        Icon(Icons.timer),
+                        CommonTextWidget(text: scheduledReports,left: seven,fontWeight: FontWeight.w400,color: Colors.black,)
+                      ],
+                    ),
+                      Container(
+                          margin: const EdgeInsets.only(left: twenty),
+                          width: twoHundred,
+                          height: fortyFive,
+                          child: const Center(
+                            child: CommonTextFieldWidget(hint: searchReport,borderRadius: twenty,
+                              prefixIcon: Icon(Icons.search,color: Colors.grey,),),
+                          ))
+
+                  ],)
+                ],
+              ):
              Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -63,13 +88,13 @@ class AllReportView extends StatelessWidget {
                 ),
                 Container(
                       margin: const EdgeInsets.only(left: twenty),
-                    width: 200,
+                    width: twoHundred,
                     child: const CommonTextFieldWidget(hint: searchReport,borderRadius: twenty,
                     prefixIcon: Icon(Icons.search,color: Colors.grey,),))
               ],)
 
              ],),
-              commonTitle(top: 40),
+              commonTitle(top: forty),
               SizedBox(
                   height: isMobile ? null : size.height * zero19,
                   child: PopularReport(
@@ -79,7 +104,7 @@ class AllReportView extends StatelessWidget {
                   )),
               commonTitle(title: general, top: fourteen),
               SizedBox(
-                  height: isMobile ? null : size.height * 0.1 ,
+                  height: isMobile ? null : size.height * zero1 ,
                   child: CommonListView(
                     list: provider.itemGeneral,
                     size: size,
@@ -241,7 +266,7 @@ class CommonListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             width: size.width * zero011,
-            height: size.width * zero011,
+            height: isMobile?size.height*zero09:size.width * zero011,
             margin: const EdgeInsets.only(left: ten, right: ten, top: fourteen),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(ten),

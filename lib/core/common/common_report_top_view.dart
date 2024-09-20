@@ -7,7 +7,7 @@ import 'package:demo/core/string_utils/string_utils.dart';
 import 'package:flutter/material.dart';
 
 class CommonReportTopView extends StatelessWidget {
-  const CommonReportTopView({super.key, required this.isMobile, required this.size,this.child,this.leftText,this.rightText,this.leftTextValue,this.topView});
+  const CommonReportTopView({super.key, required this.isMobile, required this.size,this.child,this.leftText,this.rightText,this.leftTextValue,this.topView,this.title});
 
   final bool isMobile;
   final Size size;
@@ -16,6 +16,7 @@ class CommonReportTopView extends StatelessWidget {
   final String  ?rightText;
   final String  ?leftText;
   final String  ?leftTextValue;
+  final String  ?title;
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +24,8 @@ class CommonReportTopView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const CommonTextWidget(
-          text: paymentReport,
+         CommonTextWidget(
+          text: title??paymentReport,
           fontSize: twenty,
           fontWeight: FontWeight.w400,
           color: Colors.black,

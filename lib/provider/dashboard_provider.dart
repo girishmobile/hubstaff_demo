@@ -730,5 +730,21 @@ class DashboardProvider with ChangeNotifier {
     _isLoding = false;
     notifyListeners();
   }
-//=========================================general ================================
+//=========================================daily Report ================================
+
+  List<CommonModel> _itemDailyList= [];
+
+  List<CommonModel> get itemDailyList => _itemDailyList;
+
+  void loadItemDaily() async {
+    _isLoding = true;
+    notifyListeners();
+    _itemDailyList = [
+      CommonModel(title: "Mon, Sep 9, 2024",),
+
+
+    ];
+    _isLoding = false;
+    notifyListeners();
+  }
 }

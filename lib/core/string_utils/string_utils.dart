@@ -118,7 +118,7 @@ const String notingReport="Nothing to report";
 const String notingReportDesc="Expecting to see something? Try adjusting the report";
 const String export="Export";
 const String send="Send";
-const String totalAmount="Total amount per day";
+
 
 const String hours="Hours";
 const String currentRate="Current rate";

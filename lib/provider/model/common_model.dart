@@ -1,6 +1,7 @@
 class CommonModel{
   String? url;
   String? title;
+  String? project;
   String? date;
   String? startTime;
   String? endTime;

@@ -36,7 +36,7 @@ class AmountOwedView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CommonTextWidget(
-                  text: totalAmount,
+                  text: amountPerDay,
                 ),
                 CommonReportTopView(
                   leftText: hours,

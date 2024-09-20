@@ -11,9 +11,11 @@ class CommonTextWidget extends StatelessWidget {
       this.textAlign,
       this.color,
       this.text,
+        this.textOverflow,
       this.fontSize,
       this.fontWeight,
       this.style,
+        this.decoration,
       super.key});
 
   final String? text;
@@ -25,6 +27,8 @@ class CommonTextWidget extends StatelessWidget {
   final double? left;
   final double? right;
   final double? top;
+  final TextDecoration? decoration;
+  final TextOverflow? textOverflow;
   final double? bottom;
 
   @override
@@ -36,10 +40,12 @@ class CommonTextWidget extends StatelessWidget {
           bottom: bottom ?? zero,
           top: top ?? zero),
       child: Text(
+      overflow: textOverflow,
         textAlign: textAlign,
         text ?? '',
         style: style ??
             GoogleFonts.roboto(
+              decoration: decoration,
                 color: color ?? Colors.black.withOpacity(zero50),
                 fontWeight: fontWeight ?? FontWeight.w500,
                 fontSize: fontSize ?? fourteen),

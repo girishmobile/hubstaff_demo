@@ -6,7 +6,7 @@ import 'package:demo/provider/login_provider.dart';
 import 'package:demo/provider/splash_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+///SAmeer code push at 09-20-2024 02-09 pm
 void main() async {
   Provider.debugCheckInvalidValueType = null;
   WidgetsFlutterBinding.ensureInitialized();
